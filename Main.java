@@ -56,11 +56,78 @@ public class Main {
             }
         }
 
-        if (userType == 1) {
-            
-        }
+        // if (userType == 1) {
+        //     int choice=0;
+        //     System.out.println("\nWhat do you want to do? ");
+        //     System.out.println("1. List products\n2. Add product to cart\n3. View cart\n4. Create wishlist\n5. Add to wishlist\n6. View wishlist");
+        //     choice = inputScanner.nextInt();
 
+        //     switch(choice) {
+        //         case 1:
+
+        //     }
+        // }
+
+        
+        Product laptop = new Product();
+        laptop.product_id = "PROD-001";
+        laptop.name = "Pro Gaming Laptop";
+        laptop.description = "High-performance laptop with 16GB RAM.";
+        laptop.price = 1500;
+        laptop.stock = 25;
+        laptop.apply_discount(100); 
+        
+        System.out.println("\n--- Product Created ---");
+        laptop.get_details();
+
+        Wishlist wishlist = new Wishlist();
+        wishlist.name = "My Tech Wishlist";
+        wishlist.add_item(laptop);
+        System.out.println("\n--- Wishlist ---");
+        System.out.println("Added '" + wishlist.get_wishlist().get(0).name + "' to wishlist.");
+
+        // 5. Buyer adds Product to Shopping Cart
+        Cart cart = new Cart();
+        cart.add_item(laptop);
+        cart.total_price = laptop.price - laptop.discount; 
+        System.out.println("\n--- Shopping Cart ---");
+        System.out.println("Added item to cart. Total Cart Value: $" + cart.total_price);
+        cart.create_order();
+
+        // 6. Create an Order
+        Order order = new Order();
+        order.item_count = 1;
+        order.total_price = cart.total_price;
+        order.order_status = "Processing";
+        order.order_items.add(laptop);
+        order.place_order();
+        System.out.println("\n--- Order Summary ---");
+        System.out.println("Current Order Status: " + order.get_status());
+
+        // 7. Buyer leaves a Review and Seller replies
+        Review review = new Review();
+        review.user_id = buyer.user_id;
+        review.update_review("Excellent Device!", "The laptop is extremely fast and handles games well.");
+        review.add_seller_reply("Thank you for your purchase, John!");
+        
+        System.out.println("\n--- Customer Review ---");
+        System.out.println("Title: " + review.review_title);
+        System.out.println("Text: " + review.review_text);
+        System.out.println("Seller Reply: " + review.seller_reply);
+
+        // 8. Launch a Promotional Sale
+        Sale blackFridaySale = new Sale();
+        blackFridaySale.name = "Black Friday Cyber Sale";
+        blackFridaySale.add_offer(12);
+        blackFridaySale.launch_sale();
+        
+        System.out.println("\n--- Active Sales ---");
+        System.out.println("Sale Name: " + blackFridaySale.name);
+        System.out.println("Current Offer: " + blackFridaySale.offers.get(0));
+
+        inputScanner.close();
 
 
     }
 }
+
