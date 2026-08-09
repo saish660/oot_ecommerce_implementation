@@ -9,9 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    public List<Product> products = new ArrayList<>();  // Only stores the products ids of the items.
-    public int total_price;
-
+    private List<Product> products = new ArrayList<>();  // Only stores the products ids of the items.
+    private int total_price;
 
     public int add_item(Product newItem) {
         try {
@@ -28,5 +27,13 @@ public class Cart {
 
     public int create_order() {
         return 1;
+    }
+
+    public List<Product> get_products() {
+        return this.products;
+    }
+
+    public int get_total() {
+        return this.total_price;
     }
 }

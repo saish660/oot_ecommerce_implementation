@@ -9,20 +9,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Advertisement {
-    public String product_id;
-    public String category;
-    public float ad_balance;    // stores how much the user has paid for the promotion and whats left of it
+    private String product_id;
+    private String category;
+    private float ad_balance;    // stores how much the user has paid for the promotion and whats left of it
     public List<String> ad_media_src = new ArrayList<>();   //stores public urls of the media
 
-    public int update_balance() {
+    public int set_balance() {
         return (int)(Math.random() * 100);
     }
 
-    public int update_category() {
+    public int set_category() {
         return 1;
     }
 
-    public int update_media(String[] newMediaList) {
+    public int add_media(String[] newMediaList) {
         return 1;
-    } 
+    }
+
+    public String get_productId() {
+        return this.product_id;
+    }
+
+    public String get_category() {
+        return this.category;
+    }
+
+    public float get_adBalance() {
+        return this.ad_balance;
+    }
 }

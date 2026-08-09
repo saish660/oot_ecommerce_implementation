@@ -5,13 +5,11 @@
 
 */
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Wishlist {
-    public String name;
+    private String name;
     public int item_count;
     public List<Product> wishlisted_items = new ArrayList<>();
 
@@ -26,5 +24,19 @@ public class Wishlist {
         } catch (Exception e) {
             return 0;
         }
+    }
+
+    public int set_name(String name) {
+        try {
+            this.name = name;
+        } catch (Exception e) {
+            return 0;
+        }
+
+        return 1;
+    }
+
+    public String get_name() {
+        return this.name;
     }
 }

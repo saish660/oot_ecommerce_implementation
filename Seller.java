@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Seller extends User {
-    public String seller_id;
-    public String seller_name;
+    private String seller_id;
+    private String seller_name;
     public float avg_rating;
-    public String location; // Stores the location where the seller is operating from
-    public List<Product> products = new ArrayList<Product>();
+    private String location; // Stores the location where the seller is operating from
+    private List<Product> products = new ArrayList<Product>();
 
-    public boolean update_details(String email, String ph_no, String seller_name, String location) {
+    public boolean set_details(String email, String ph_no, String seller_name, String location) {
         try {
             this.email = email;
             this.ph_no = ph_no;
@@ -28,7 +28,7 @@ public class Seller extends User {
         }
     }
 
-    public boolean update_location(String newLocation) {
+    public boolean set_location(String newLocation) {
         try {
             this.location = newLocation;
             return true;
@@ -37,7 +37,19 @@ public class Seller extends User {
         }
     }
 
-    public String[] list_products() {
+    public String[] get_products() {
         return new String[]{"product1", "product2"};    
+    }
+
+    public String get_location() {
+        return this.location;
+    }
+
+    public String get_seller_id() {
+        return this.seller_id;
+    }
+
+    public String get_seller_name() {
+        return this.seller_name;
     }
 }

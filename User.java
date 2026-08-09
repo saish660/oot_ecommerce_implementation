@@ -5,13 +5,11 @@
 
 */
 
-
-
 public class User {
-    public int user_id;
-    public String email;
+    protected int user_id;
+    protected String email;
     protected String ph_no;
-    private String password;
+    protected String password;
 
     public boolean register(int uid, String email, String ph_no, String passwd) {
         try {
@@ -26,8 +24,55 @@ public class User {
 
     }
 
+    public int set_uid(int uid) {
+        try {
+            this.user_id = uid;
+        } catch (Exception e) {
+            return 0;
+        }
+
+        return 1;
+    }
+
+    public int set_email(String email) {
+        try {
+            this.email = email;
+        } catch (Exception e) {
+            return 0;
+        }
+
+        return 1;
+    }
+
+    public int set_ph_no(String ph_no) {
+        try {
+            this.ph_no = ph_no;
+        } catch (Exception e) {
+            return 0;
+        }
+
+        return 1;
+    }
+
+    public int set_passwd(String passwd) {
+        try {
+            this.password = passwd;
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+
     public int login(int uid, String passwd) {
         return 1;
+    }
+
+    public String get_user_email() {
+        return this.email;
+    }
+
+    public String get_ph_no() {
+        return this.ph_no;
     }
 
 }

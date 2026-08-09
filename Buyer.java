@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Buyer extends User {
-    public String address;
-    public String name;
-    public List<String> paymentOptions = new ArrayList<>(); //Only stores the names of the payment options, further linking is done seperately
+    private String address;
+    private String name;
+    private List<String> paymentOptions = new ArrayList<>(); //Only stores the names of the payment options, further linking is done seperately
 
-    public boolean update_details(int uid, String email, String ph_no) {
+    public boolean set_details(int uid, String email, String ph_no) {
         try {
             this.user_id = uid;
             this.email = email;
@@ -23,6 +23,24 @@ public class Buyer extends User {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public int set_address(String address) {
+        try {
+            this.address = address;
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
+    }
+
+    public int set_name(String name) {
+        try {
+            this.name = name;
+        } catch (Exception e) {
+            return 0;
+        }
+        return 1;
     }
 
     public boolean add_payment_option(String payment_method) {

@@ -10,9 +10,10 @@ import java.util.List;
 public class Sale {
     public String name;
     public String description;
-    public List<Integer> offers = new ArrayList<>(); // stores the pid of the products (discount is stored with the product itself)
+    public List<Integer> offers = new ArrayList<>(); // stores the pid of the products (discount is stored with the
+                                                     // product itself)
     public String start_date;
-    public float duration_hours;    // How long the sale will last from start date
+    public float duration_hours; // How long the sale will last from start date
 
     public int launch_sale() {
         return 1;
@@ -32,6 +33,20 @@ public class Sale {
     }
 
     public int remove_offer(String offer) {
+        return 1;
+    }
+
+    public float get_duration() {
+        return this.duration_hours;
+    }
+
+    public int set_start_date(String date) {
+        try {
+            this.start_date = date;
+        } catch (Exception e) {
+            return 0;
+        }
+
         return 1;
     }
 
