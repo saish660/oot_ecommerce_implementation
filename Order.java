@@ -15,42 +15,42 @@ public class Order {
     private String order_status;
     private List<Integer> order_items = new ArrayList<>(); // Stores the product ids of the items
 
-    public int place_order() {
-        return 1;
+    public boolean place_order() {
+        return true;
     }
 
-    public int cancel_order() {
-        return 1;
+    public boolean cancel_order() {
+        return true;
     }
 
-    public int add_order_item(int product_id) {
+    public boolean add_order_item(int product_id) {
         try {
             this.order_items.add(product_id);
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_order_date(int order_date) {
+    public boolean set_order_date(int order_date) {
         try {
             this.order_date = order_date;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_order_status(String new_status) {
+    public boolean set_order_status(String new_status) {
         try {
             this.order_status = new_status;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
     public String get_status() {

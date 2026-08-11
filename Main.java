@@ -37,8 +37,8 @@ public class Main {
             System.out.println("Enter your address: ");
             String address = inputScanner.nextLine();
 
-            if (buyer.set_details(uid, email, phNo) && buyer.set_name(buyerName) == 1
-                    && buyer.set_address(address) == 1) {
+            if (buyer.set_details(uid, email, phNo) && buyer.set_name(buyerName)
+                    && buyer.set_address(address)) {
                 System.out.println("Details updated successfully");
                 System.out.println("Buyer Name: " + buyer.getName());
                 System.out.println("Buyer Address: " + buyer.getAddress());

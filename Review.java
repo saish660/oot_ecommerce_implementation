@@ -35,16 +35,16 @@ public class Review {
         }
     }
 
-    public int add_media() {
-        return 1;
+    public boolean add_media() {
+        return true;
     }
 
-    public int set_seller_reply(String reply) {
+    public boolean set_seller_reply(String reply) {
         try {
             this.seller_reply = reply;
-            return 1;
+            return true;
         } catch(Exception e) {
-            return 0;
+            return false;
         }
     }
 

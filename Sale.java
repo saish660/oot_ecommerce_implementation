@@ -15,39 +15,39 @@ public class Sale {
     public String start_date;
     public float duration_hours; // How long the sale will last from start date
 
-    public int launch_sale() {
-        return 1;
+    public boolean launch_sale() {
+        return true;
     }
 
-    public int stop_sale() {
-        return 1;
+    public boolean stop_sale() {
+        return true;
     }
 
-    public int add_offer(int offer) {
+    public boolean add_offer(int offer) {
         try {
             this.offers.add(offer);
-            return 1;
+            return true;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
     }
 
-    public int remove_offer(String offer) {
-        return 1;
+    public boolean remove_offer(String offer) {
+        return true;
     }
 
     public float get_duration() {
         return this.duration_hours;
     }
 
-    public int set_start_date(String date) {
+    public boolean set_start_date(String date) {
         try {
             this.start_date = date;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
 }

@@ -17,23 +17,23 @@ public class Wishlist {
         return this.wishlisted_items;
     }
 
-    public int add_item(Product newItem) {
+    public boolean add_item(Product newItem) {
         try {
             this.wishlisted_items.add(newItem);
-            return 1;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
+        return true;
     }
 
-    public int set_name(String name) {
+    public boolean set_name(String name) {
         try {
             this.name = name;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
     public String get_name() {

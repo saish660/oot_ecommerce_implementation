@@ -18,7 +18,13 @@ public class Advertisement {
         return (int)(Math.random() * 100);
     }
 
-    public int set_category() {
+    public int set_category(String category) {
+        try {
+            this.category = category;
+        } catch (Exception e) {
+            return 0;
+        }
+
         return 1;
     }
 

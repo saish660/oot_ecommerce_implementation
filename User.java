@@ -24,47 +24,47 @@ public class User {
 
     }
 
-    public int set_uid(int uid) {
+    public boolean set_uid(int uid) {
         try {
             this.user_id = uid;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_email(String email) {
+    public boolean set_email(String email) {
         try {
             this.email = email;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_ph_no(String ph_no) {
+    public boolean set_ph_no(String ph_no) {
         try {
             this.ph_no = ph_no;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_passwd(String passwd) {
+    public boolean set_passwd(String passwd) {
         try {
             this.password = passwd;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
 
-    public int login(int uid, String passwd) {
-        return 1;
+    public boolean login(int uid, String passwd) {
+        return true;
     }
 
     public String get_user_email() {

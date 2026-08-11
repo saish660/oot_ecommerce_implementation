@@ -25,22 +25,22 @@ public class Buyer extends User {
         }
     }
 
-    public int set_address(String address) {
+    public boolean set_address(String address) {
         try {
             this.address = address;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
 
-    public int set_name(String name) {
+    public boolean set_name(String name) {
         try {
             this.name = name;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
 
     public boolean add_payment_option(String payment_method) {

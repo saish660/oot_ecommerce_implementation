@@ -17,8 +17,8 @@ public class Product {
     private float rating;
     public int stock; // stock available with the seller
 
-    public int update_stock() {
-        return 1;
+    public boolean update_stock() {
+        return true;
     }
 
     public void get_details() {
@@ -50,42 +50,42 @@ public class Product {
         return this.rating;
     }
 
-    public int set_product_name(String newName) {
+    public boolean set_product_name(String newName) {
         try {
             this.name = newName;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_product_description(String newDescription) {
+    public boolean set_product_description(String newDescription) {
         try {
             this.description = newDescription;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_price(int newPrice) {
+    public boolean set_price(int newPrice) {
         try {
             this.price = newPrice;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
 
-        return 1;
+        return true;
     }
 
-    public int set_discount(int newDiscount) {
+    public boolean set_discount(int newDiscount) {
         try {
             this.discount = newDiscount;
-            return 1;
+            return true;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
     }
 }

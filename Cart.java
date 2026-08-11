@@ -12,21 +12,21 @@ public class Cart {
     private List<Product> products = new ArrayList<>();  // Only stores the products ids of the items.
     private int total_price;
 
-    public int add_item(Product newItem) {
+    public boolean add_item(Product newItem) {
         try {
             this.products.add(newItem);
-            return 1;
+            return true;
         } catch (Exception e) {
-            return 0;
+            return false;
         }
     }
 
-    public int remove_item(Product Item) {
-        return 1;
+    public boolean remove_item(Product Item) {
+        return true;
     }
 
-    public int create_order() {
-        return 1;
+    public boolean create_order() {
+        return true;
     }
 
     public List<Product> get_products() {
