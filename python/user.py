@@ -1,56 +1,142 @@
 class User:
-    def __init__(self, user_id=0, email="", ph_no="", password=""):
-        self._user_id = user_id
-        self._email = email
-        self._ph_no = ph_no
-        self._password = password
+    def __init__(self):
+        self.user_id = 0
+        self.email = ""
+        self.ph_no = ""
+        self.password = ""
 
     def register(self, uid, email, ph_no, passwd):
-        self._user_id = uid
-        self._email = email
-        self._ph_no = ph_no
-        self._password = passwd
+        try:
+            self.user_id = uid
+            self.email = email
+            self.ph_no = ph_no
+            self.password = passwd
+            return True
+        except Exception:
+            return False
 
-        return True
+    def set_uid(self, uid):
+        try:
+            self.user_id = uid
+            return True
+        except Exception:
+            return False
+
+    def set_email(self, email):
+        try:
+            self.email = email
+            return True
+        except Exception:
+            return False
+
+    def set_ph_no(self, ph_no):
+        try:
+            self.ph_no = ph_no
+            return True
+        except Exception:
+            return False
+
+    def set_passwd(self, passwd):
+        try:
+            self.password = passwd
+            return True
+        except Exception:
+            return False
 
     def login(self, uid, passwd):
         return True
 
-    @property
-    def email(self):
-        return self._email
+    def get_user_email(self):
+        return self.email
 
-    @email.setter
-    def email(self, new_email):
-        self._email = new_email
-
-    @property
-    def ph_no(self):
-        return self._ph_no
-
-    @ph_no.setter
-    def ph_no(self, new_ph_no):
-        self._ph_no = new_ph_no
-
-    @property
-    def user_id(self):
-        return self._user_id
-
-    @user_id.setter
-    def user_id(self, newid):
-        self._user_id = newid
-
-    @property
-    def password(self):
-        return self._password
-
-    @password.setter
-    def password(self, new_pass):
-        self._password = new_pass
+    def get_ph_no(self):
+        return self.ph_no
 
 
 class Buyer(User):
-    def __init__(self, address="", name="", payment_options=[]):
-        self._address = address
-        self.name = name
-        self._
+    def __init__(self):
+        super().__init__()
+        self.address = ""
+        self.name = ""
+        self.paymentOptions = []
+
+    def set_details(self, uid, email, ph_no):
+        try:
+            self.user_id = uid
+            self.email = email
+            self.ph_no = ph_no
+            return True
+        except Exception:
+            return False
+
+    def set_address(self, address):
+        try:
+            self.address = address
+            return True
+        except Exception:
+            return False
+
+    def set_name(self, name):
+        try:
+            self.name = name
+            return True
+        except Exception:
+            return False
+
+    def add_payment_option(self, payment_method):
+        try:
+            self.paymentOptions.append(payment_method)
+            return True
+        except Exception:
+            return False
+
+    def place_order(self):
+        return True
+
+    def get_cart(self):
+        return [1, 2]
+
+    def getName(self):
+        return self.name
+
+    def getAddress(self):
+        return self.address
+
+
+class Seller(User):
+    def __init__(self):
+        super().__init__()
+        self.seller_id = ""
+        self.seller_name = ""
+        self.avg_rating = 0.0
+        self.location = ""
+        self.products = []
+
+    def set_details(self, email, ph_no, seller_name, location):
+        try:
+            self.email = email
+            self.ph_no = ph_no
+            self.seller_name = seller_name
+            self.location = location
+            return True
+        except Exception:
+            return False
+
+    def set_location(self, newLocation):
+        try:
+            self.location = newLocation
+            return True
+        except Exception:
+            return False
+
+    def get_products(self):
+        return ["product1", "product2"]
+
+    def get_location(self):
+        return self.location
+
+    def get_seller_id(self):
+        return self.seller_id
+
+    def get_seller_name(self):
+        return self.seller_name
